@@ -3,19 +3,171 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #FAFDF9;
   --foreground: #171717;
+  --blue: #7EACB5;
+  --brown: #FADFA1;
+  --tomato: #C96868;
+  --sand: #FFF4EA;
+  --purple: #705C53;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar {
+  width: 0.4rem;
 }
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+} 
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
+  font-size: 1rem;
+  overflow-y: scroll;
+}
+
+input, select {
+  background-color: transparent;
+  outline: none;
+  border: 0.12rem solid rgb(190, 190, 190);
+  border-radius: 0.2rem;
+  padding: 0.7rem 0.6rem;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  border: 0.12rem solid var(--blue);
+  box-shadow: 0 0 0.2rem 0 var(--blue);
+}
+
+.btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.2rem;
+}
+
+.primary-btn {
+  border: 2px solid var(--blue);
+  background-color: var(--blue);
+  color: white;
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.secondary-btn {
+  border: 2px solid var(--blue);
+  transition: 0.2s;
+}
+
+.secondary-btn:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.selectable-btn {
+  border: 2px solid var(--tomato);
+  transition: 0.2s;
+}
+
+.selectable-btn:hover {
+  background-color: var(--tomato);
+  color: white;
+}
+
+.selectable-btn.selected {
+  background-color: var(--tomato);
+  color: white;
+}
+
+.scale-btn {
+  padding: 0.3rem;
+  border-radius: 5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+h1 {
+  font-size: x-large;
+}
+
+h2 {
+  font-size: larger;
+  font-family: 'Courier New', monospace;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.center {
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.cursive {
+	font-family: 'Brush Script MT', cursive;
+}
+
+.monospace {
+	font-family: 'Courier New', monospace;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: transparent 2px solid;
+  transition: 0.2s;
+}
+
+.header-btn:hover {
+  border-bottom: var(--tomato) 2px solid;
+}
+
+.header-btn.selected {
+  border-bottom: var(--tomato) 2px solid;
+}
+
+.gradient {
+  background: linear-gradient(to bottom, var(--blue) 40%, var(--background) 60%);
+}
+
+.header-shdw {
+  box-shadow: 0 0.2rem 0.2rem -0.2rem gray;
+}
+
+.binary-selector > button {
+  padding: 0.3rem 0.8rem;
+}
+
+.binary-selector > .yes {
+  border-radius: 0.2rem 0 0 0.2rem;
+  border-right-width: 1px;
+}
+
+.binary-selector > .no {
+  border-radius: 0 0.2rem 0.2rem 0;
+  border-left-width: 1px;
 }
